@@ -3,6 +3,7 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { Points, PointMaterial } from '@react-three/drei';
 import { motion, useInView } from 'framer-motion';
 import * as THREE from 'three';
+import { title } from 'framer-motion/client';
 
 // Theme Context
 const ThemeContext = createContext();
@@ -462,8 +463,14 @@ const ProjetosSection = () => {
       badge: '🏆 TOP 3 / 140',
       badgeTooltip: 'Resultado final em 08/11',
       descricao: 'Análise e storytelling com dados reais, incluindo predição e segmentação de clientes.',
-      tags: ['Python', 'Storytelling', 'Machine Learning', 'RFM'],
+      tags: ['Python', 'Storytelling', 'Machine Learning', 'RFM', 'K-Means', 'XGBoost'],
       githubUrl: 'https://github.com/PedroHSSoares-Dev/ClickBus'
+    },
+    {
+      title: 'Sistema Bancário Simples (CRUD com Docker)',
+      descricao: 'Desenvolvimento de um sistema bancário simples utilizando operações CRUD, containerizado com Docker para a persistência e escalabilidade.',
+      tags: ['Python','Docker', 'CRUD', 'Backend'],
+      githubUrl: 'https://github.com/PedroHSSoares-Dev/crud'
     }
   ];
 
@@ -487,7 +494,8 @@ const HabilidadesSection = () => {
   const habilidades = [
     'SQL', 'Python', 'ETL', 'Modelagem de Dados',
     'Análise de Dados', 'Data Viz', 'Git/GitHub', 'Google Colab',
-    'Jupyter Notebook', 'Docker', 'AWS'
+    'Jupyter Notebook', 'Docker', 'AWS', 'Pandas', 'NumPy', 'Matplotlib',
+    'Seaborn'
   ];
 
   return (
