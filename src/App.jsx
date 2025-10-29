@@ -467,6 +467,14 @@ const ProjetosSection = () => {
       githubUrl: 'https://github.com/PedroHSSoares-Dev/ClickBus'
     },
     {
+      title: 'Real-Time Fraud Detection',
+      badge: '🛡️ 71.6% RECALL',
+      badgeTooltip: 'Detecção de fraude em tempo real',
+      descricao: 'Sistema completo com Flask API, PostgreSQL, Docker e ML (Isolation Forest). Detecta teleporte, card testing e anomalias.',
+      tags: ['Python', 'Flask', 'PostgreSQL', 'Docker', 'ML', 'AWS'],
+      githubUrl: 'https://github.com/PedroHSSoares-Dev/fraud-detection-realtime'
+    },
+    {
       title: 'Sistema Bancário Simples (CRUD com Docker)',
       descricao: 'Desenvolvimento de um sistema bancário simples utilizando operações CRUD, containerizado com Docker para a persistência e escalabilidade.',
       tags: ['Python','Docker', 'CRUD', 'Backend'],
