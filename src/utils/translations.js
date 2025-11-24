@@ -63,7 +63,7 @@ export const translations = {
                     badgeTooltip: 'Alta taxa de detecção de fraudes',
                     description: 'API completa para detecção de fraudes em transações financeiras. Implementa Isolation Forest para detecção de anomalias em tempo real.',
                     impact: 'Processamento de transações em <100ms com alta precisão na detecção de anomalias.',
-                    tags: ['Python', 'Flask', 'Docker', 'PostgreSQL', 'Isolation Forest', 'AWS']
+                    tags: ['Python', 'Flask', 'Docker', 'PostgreSQL', 'Isolation Forest']
                 },
                 {
                     title: 'Sistema Bancário Containerizado',
