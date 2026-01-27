@@ -18,9 +18,10 @@ export const translations = {
         },
         experience: {
             title: 'Experiência Profissional',
-            current: 'Atual',
             role: 'Estagiário em Dados',
             company: 'WorkWise Consulting',
+            startDate: '2025-08',
+            endDate: null,
             description: 'Responsável pelo desenvolvimento de dashboards interativos e implementação de pipelines de ETL, transformando dados brutos em insights estratégicos para a tomada de decisão.'
         },
         education: {
@@ -33,13 +34,17 @@ export const translations = {
                 {
                     institution: 'FIAP',
                     course: 'CST em Data Science',
-                    period: 'fev/2025 – dez/2026',
+                    startDate: '2025-01',
+                    endDate: '2026-12',
+                    totalSemesters: 4,
                     statusKey: 'ongoing'
                 },
                 {
                     institution: 'ETEC',
                     course: 'Técnico em Desenvolvimento de Sistemas',
-                    period: 'jan/2023 – jun/2024',
+                    startDate: '2023-01',
+                    endDate: '2024-06',
+                    totalSemesters: 3,
                     statusKey: 'completed'
                 }
             ]
@@ -88,7 +93,7 @@ export const translations = {
             whatsapp: 'WhatsApp'
         },
         footer: {
-            rights: '© 2025 Pedro Henrique Simão Soares. Todos os direitos reservados.'
+            rights: '© {year} Pedro Henrique Simão Soares. Todos os direitos reservados.'
         }
     },
     en: {
@@ -110,9 +115,10 @@ export const translations = {
         },
         experience: {
             title: 'Professional Experience',
-            current: 'Current',
             role: 'Data Intern',
             company: 'WorkWise Consulting',
+            startDate: '2025-08',
+            endDate: null,
             description: 'Responsible for developing interactive dashboards and implementing ETL pipelines, transforming raw data into strategic insights for decision-making.'
         },
         education: {
@@ -125,13 +131,17 @@ export const translations = {
                 {
                     institution: 'FIAP',
                     course: 'Associate Degree in Data Science',
-                    period: 'Feb/2025 – Dec/2026',
+                    startDate: '2025-01',
+                    endDate: '2026-12',
+                    totalSemesters: 4,
                     statusKey: 'ongoing'
                 },
                 {
                     institution: 'ETEC',
                     course: 'Systems Development Technician',
-                    period: 'Jan/2023 – Jun/2024',
+                    startDate: '2023-01',
+                    endDate: '2024-06',
+                    totalSemesters: 3,
                     statusKey: 'completed'
                 }
             ]
@@ -180,7 +190,7 @@ export const translations = {
             whatsapp: 'WhatsApp'
         },
         footer: {
-            rights: '© 2025 Pedro Henrique Simão Soares. All rights reserved.'
+            rights: '© {year} Pedro Henrique Simão Soares. All rights reserved.'
         }
     }
 };

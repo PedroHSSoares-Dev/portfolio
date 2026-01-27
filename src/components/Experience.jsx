@@ -2,10 +2,14 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useTheme } from './ThemeContext';
 import { useLanguage } from './LanguageContext';
+import { formatPeriod, formatDuration } from '../utils/dateUtils';
 
 const Experience = () => {
     const { isDark } = useTheme();
-    const { t } = useLanguage();
+    const { t, language } = useLanguage();
+
+    const period = formatPeriod(t.experience.startDate, t.experience.endDate, language);
+    const duration = formatDuration(t.experience.startDate, t.experience.endDate);
 
     return (
         <section id="experiencia" className={`py-20 ${isDark ? 'bg-zinc-900/50' : 'bg-gray-50'} transition-colors duration-300`}>
@@ -29,9 +33,14 @@ const Experience = () => {
                                 <h3 className="text-xl sm:text-2xl font-bold text-cyan-500">{t.experience.role}</h3>
                                 <p className={`text-lg font-medium ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>{t.experience.company}</p>
                             </div>
-                            <span className={`text-sm px-3 py-1 rounded-full ${isDark ? 'bg-zinc-700 text-gray-300' : 'bg-gray-100 text-gray-600'}`}>
-                                {t.experience.current}
-                            </span>
+                            <div className="flex flex-col items-start sm:items-end gap-1">
+                                <span className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-500'}`}>
+                                    {period}
+                                </span>
+                                <span className={`text-sm px-3 py-1 rounded-full font-medium ${isDark ? 'bg-cyan-500/20 text-cyan-400' : 'bg-cyan-100 text-cyan-700'}`}>
+                                    {duration}
+                                </span>
+                            </div>
                         </div>
 
                         <p className={`text-base ${isDark ? 'text-gray-400' : 'text-gray-600'} leading-relaxed mb-4`}>
