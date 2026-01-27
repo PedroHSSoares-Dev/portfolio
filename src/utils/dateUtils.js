@@ -52,13 +52,13 @@ export function formatDuration(startDate, endDate = null) {
  */
 export function formatPeriod(startDate, endDate, lang = 'pt') {
     const monthNames = {
-        pt: ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'],
+        pt: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
         en: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
     };
 
     const presentText = {
-        pt: 'hoje',
-        en: 'present'
+        pt: 'Hoje',
+        en: 'Present'
     };
 
     const formatDate = (dateStr) => {
