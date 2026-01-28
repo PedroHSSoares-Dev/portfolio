@@ -11,6 +11,14 @@ export const LanguageProvider = ({ children }) => {
         if (saved) setLanguage(saved);
     }, []);
 
+    // Update HTML lang attribute when language changes
+    useEffect(() => {
+        const htmlElement = document.getElementById('html-root');
+        if (htmlElement) {
+            htmlElement.lang = language === 'pt' ? 'pt-BR' : 'en-US';
+        }
+    }, [language]);
+
     const toggleLanguage = () => {
         setLanguage(prev => {
             const newLang = prev === 'pt' ? 'en' : 'pt';
@@ -29,3 +37,4 @@ export const LanguageProvider = ({ children }) => {
 };
 
 export const useLanguage = () => useContext(LanguageContext);
+

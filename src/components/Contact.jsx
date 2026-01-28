@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTheme } from './ThemeContext';
 import { useLanguage } from './LanguageContext';
+import { AnimatedSection } from '../utils/animations';
 
 const Contact = () => {
     const { isDark } = useTheme();
@@ -9,10 +10,12 @@ const Contact = () => {
     return (
         <section id="contato" className={`py-20 ${isDark ? 'bg-zinc-900/50' : 'bg-gray-50'} transition-colors duration-300`}>
             <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-                <h2 className={`text-3xl sm:text-4xl font-bold ${isDark ? 'text-gray-200' : 'text-gray-900'} mb-8 transition-colors duration-300`}>{t.contact.title}</h2>
-                <p className={`text-lg ${isDark ? 'text-gray-400' : 'text-gray-600'} mb-12 max-w-2xl mx-auto`}>
-                    {t.contact.description}
-                </p>
+                <AnimatedSection>
+                    <h2 className={`text-3xl sm:text-4xl font-bold ${isDark ? 'text-gray-200' : 'text-gray-900'} mb-8 transition-colors duration-300`}>{t.contact.title}</h2>
+                    <p className={`text-lg ${isDark ? 'text-gray-400' : 'text-gray-600'} mb-12 max-w-2xl mx-auto`}>
+                        {t.contact.description}
+                    </p>
+                </AnimatedSection>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                     <a

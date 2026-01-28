@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useTheme } from './ThemeContext';
 import { useLanguage } from './LanguageContext';
 import { formatPeriod, calculateSemesterProgress } from '../utils/dateUtils';
+import { AnimatedTitle } from '../utils/animations';
 
 const ProgressPill = ({ current, total, isDark }) => {
     const progress = (current / total) * 100;
@@ -33,10 +34,12 @@ const Education = () => {
     return (
         <section id="formacao" className="py-20">
             <div className="max-w-4xl mx-auto px-4 sm:px-6">
-                <h2 className={`text-3xl sm:text-4xl font-bold ${isDark ? 'text-gray-200' : 'text-gray-900'} mb-12 transition-colors duration-300 flex items-center gap-3`}>
-                    <span className="bg-violet-500 h-8 w-1 rounded-full"></span>
-                    {t.education.title}
-                </h2>
+                <AnimatedTitle>
+                    <h2 className={`text-3xl sm:text-4xl font-bold ${isDark ? 'text-gray-200' : 'text-gray-900'} mb-12 transition-colors duration-300 flex items-center gap-3`}>
+                        <span className="bg-violet-500 h-8 w-1 rounded-full"></span>
+                        {t.education.title}
+                    </h2>
+                </AnimatedTitle>
 
                 <div className="grid gap-6">
                     {t.education.items.map((item, idx) => {

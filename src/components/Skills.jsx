@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useTheme } from './ThemeContext';
 import { useLanguage } from './LanguageContext';
+import { AnimatedTitle } from '../utils/animations';
 
 const SkillCategory = ({ title, skills, color }) => {
     const { isDark } = useTheme();
@@ -53,10 +54,12 @@ const Skills = () => {
     return (
         <section id="habilidades" className="py-20">
             <div className="max-w-4xl mx-auto px-4 sm:px-6">
-                <h2 className={`text-3xl sm:text-4xl font-bold ${isDark ? 'text-gray-200' : 'text-gray-900'} mb-12 transition-colors duration-300 flex items-center gap-3`}>
-                    <span className="bg-violet-500 h-8 w-1 rounded-full"></span>
-                    {t.skills.title}
-                </h2>
+                <AnimatedTitle>
+                    <h2 className={`text-3xl sm:text-4xl font-bold ${isDark ? 'text-gray-200' : 'text-gray-900'} mb-12 transition-colors duration-300 flex items-center gap-3`}>
+                        <span className="bg-violet-500 h-8 w-1 rounded-full"></span>
+                        {t.skills.title}
+                    </h2>
+                </AnimatedTitle>
 
                 <div className={`p-8 rounded-2xl border ${isDark ? 'bg-zinc-800/30 border-white/10' : 'bg-white border-gray-200 shadow-sm'}`}>
                     {categories.map((cat, idx) => (

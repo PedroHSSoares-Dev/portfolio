@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useTheme } from './ThemeContext';
 import { useLanguage } from './LanguageContext';
+import { AnimatedTitle } from '../utils/animations';
 
 const ProjectCard = ({ title, badge, badgeTooltip, description, tags, githubUrl, impact, viewCodeLabel, impactLabel }) => {
     const { isDark } = useTheme();
@@ -89,10 +90,12 @@ const Projects = () => {
     return (
         <section id="projetos" className={`py-20 ${isDark ? 'bg-zinc-900/50' : 'bg-gray-50'} transition-colors duration-300`}>
             <div className="max-w-6xl mx-auto px-4 sm:px-6">
-                <h2 className={`text-3xl sm:text-4xl font-bold ${isDark ? 'text-gray-200' : 'text-gray-900'} mb-12 transition-colors duration-300 flex items-center gap-3`}>
-                    <span className="bg-blue-500 h-8 w-1 rounded-full"></span>
-                    {t.projects.title}
-                </h2>
+                <AnimatedTitle>
+                    <h2 className={`text-3xl sm:text-4xl font-bold ${isDark ? 'text-gray-200' : 'text-gray-900'} mb-12 transition-colors duration-300 flex items-center gap-3`}>
+                        <span className="bg-blue-500 h-8 w-1 rounded-full"></span>
+                        {t.projects.title}
+                    </h2>
+                </AnimatedTitle>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {projectsWithLinks.map((projeto, idx) => (
