@@ -71,6 +71,14 @@ export const translations = {
                     tags: ['Python', 'Flask', 'Docker', 'PostgreSQL', 'Isolation Forest']
                 },
                 {
+                    title: 'AWS CCP Exam Simulator',
+                    badge: '☁️ 1.200+ QUESTÕES',
+                    badgeTooltip: 'Banco de questões baseado no CLF-C02',
+                    description: 'Simulador completo para certificação AWS Cloud Practitioner com dashboard analítico, heatmap de domínios e análise preditiva de pontos fracos.',
+                    impact: '4 modos de estudo, sistema anti-vício de questões e deploy automatizado com Docker + CI/CD.',
+                    tags: ['React', 'TypeScript', 'Tailwind', 'Zustand', 'Docker', 'AWS']
+                },
+                {
                     title: 'Sistema Bancário Containerizado',
                     description: 'Backend robusto para operações bancárias com arquitetura de microsserviços simulada via Docker Compose.',
                     impact: 'Ambiente de desenvolvimento replicável e escalável.',
@@ -166,6 +174,14 @@ export const translations = {
                     description: 'Complete API for fraud detection in financial transactions. Implements Isolation Forest for real-time anomaly detection.',
                     impact: 'Transaction processing in <100ms with high precision in anomaly detection.',
                     tags: ['Python', 'Flask', 'Docker', 'PostgreSQL', 'Isolation Forest', 'AWS']
+                },
+                {
+                    title: 'AWS CCP Exam Simulator',
+                    badge: '☁️ 1,200+ QUESTIONS',
+                    badgeTooltip: 'Question bank based on CLF-C02',
+                    description: 'Complete simulator for AWS Cloud Practitioner certification with analytical dashboard, domain heatmap and predictive weakness analysis.',
+                    impact: '4 study modes, question anti-addiction system and automated deploy with Docker + CI/CD.',
+                    tags: ['React', 'TypeScript', 'Tailwind', 'Zustand', 'Docker', 'AWS']
                 },
                 {
                     title: 'Containerized Banking System',
