@@ -53,6 +53,8 @@ export const translations = {
             title: 'Projetos em Destaque',
             viewCode: 'Ver Código',
             impactLabel: '⚡ Impacto:',
+            showMore: 'Ver Mais',
+            showLess: 'Ver Menos',
             items: [
                 {
                     title: 'Challenge ClickBus (FIAP)',
@@ -158,6 +160,8 @@ export const translations = {
             title: 'Featured Projects',
             viewCode: 'View Code',
             impactLabel: '⚡ Impact:',
+            showMore: 'Show More',
+            showLess: 'Show Less',
             items: [
                 {
                     title: 'Challenge ClickBus (FIAP)',

@@ -76,6 +76,7 @@ const ProjectCard = ({ title, badge, badgeTooltip, description, tags, githubUrl,
 const Projects = () => {
     const { isDark } = useTheme();
     const { t } = useLanguage();
+    const [showAll, setShowAll] = useState(false);
 
     // Add githubUrl to translation items
     const projectsWithLinks = t.projects.items.map((item, index) => {
@@ -88,6 +89,9 @@ const Projects = () => {
         return { ...item, githubUrl: urls[index] };
     });
 
+    const visibleProjects = showAll ? projectsWithLinks : projectsWithLinks.slice(0, 3);
+    const hasMoreProjects = projectsWithLinks.length > 3;
+
     return (
         <section id="projetos" className={`py-20 ${isDark ? 'bg-zinc-900/50' : 'bg-gray-50'} transition-colors duration-300`}>
             <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -99,7 +103,7 @@ const Projects = () => {
                 </AnimatedTitle>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {projectsWithLinks.map((projeto, idx) => (
+                    {visibleProjects.map((projeto, idx) => (
                         <ProjectCard
                             key={idx}
                             {...projeto}
@@ -108,6 +112,17 @@ const Projects = () => {
                         />
                     ))}
                 </div>
+
+                {hasMoreProjects && (
+                    <div className="flex justify-center mt-10">
+                        <button
+                            onClick={() => setShowAll(!showAll)}
+                            className="px-8 py-4 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold text-lg hover:shadow-lg hover:shadow-cyan-500/25 transition-all transform hover:-translate-y-1"
+                        >
+                            {showAll ? t.projects.showLess : t.projects.showMore}
+                        </button>
+                    </div>
+                )}
             </div>
         </section>
     );
