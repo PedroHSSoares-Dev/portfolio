@@ -62,7 +62,7 @@ const Header = () => {
                 className={`
                     w-full max-w-7xl mx-4 sm:mx-6 rounded-2xl transition-all duration-300
                     ${isScrolled
-                        ? `px-6 py-3 shadow-lg backdrop-blur-xl ${isDark ? 'bg-zinc-900/90 border border-white/10' : 'bg-white/90 border border-gray-200'}`
+                        ? 'px-6 py-3 glass-header'
                         : 'px-4 py-4 bg-transparent border border-transparent'
                     }
                 `}

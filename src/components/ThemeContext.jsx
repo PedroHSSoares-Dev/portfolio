@@ -10,6 +10,15 @@ export const ThemeProvider = ({ children }) => {
     if (saved) setIsDark(saved === 'dark');
   }, []);
 
+  // Apply dark class to html element
+  useEffect(() => {
+    if (isDark) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [isDark]);
+
   const toggleTheme = () => {
     setIsDark(prev => {
       const newTheme = !prev;

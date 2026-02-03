@@ -7,11 +7,70 @@
 @tailwind utilities;
 
 @layer utilities {
-  .glass {
-    @apply backdrop-blur-lg bg-white/10 border border-white/20;
+  /* Light mode glass header */
+  .glass-header {
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    box-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.5),
+      inset 0 -1px 0 rgba(255, 255, 255, 0.1);
   }
-  .glass-dark {
-    @apply backdrop-blur-lg bg-black/30 border border-white/10;
+
+  /* Dark mode glass header - solid black at 75% opacity (25% translucent) */
+  .dark .glass-header {
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Light mode gradient border */
+  .glass-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg,
+        transparent,
+        rgba(255, 255, 255, 0.6),
+        transparent);
+    opacity: 0.6;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  /* Hide in dark mode */
+  .dark .glass-header::before {
+    opacity: 0;
+  }
+
+  /* Light mode side gradient */
+  .glass-header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(180deg,
+        rgba(255, 255, 255, 0.4),
+        transparent,
+        rgba(255, 255, 255, 0.2));
+    opacity: 0.5;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  /* Hide in dark mode */
+  .dark .glass-header::after {
+    opacity: 0;
   }
 }
 
