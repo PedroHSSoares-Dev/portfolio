@@ -1,28 +1,19 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useRef, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { useTheme } from './ThemeContext';
 import { useLanguage } from './LanguageContext';
 import { AnimatedTitle } from '../utils/animations';
 
-const ProjectCard = ({ title, badge, badgeTooltip, description, tags, githubUrl, impact, viewCodeLabel, impactLabel, index = 0 }) => {
+const ProjectCard = ({ title, badge, badgeTooltip, description, tags, githubUrl, impact, viewCodeLabel, impactLabel }) => {
     const { isDark } = useTheme();
-    const [isHovered, setIsHovered] = useState(false);
 
     return (
         <motion.div
-            layout
-            initial={{ opacity: 0, y: 30, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -20, scale: 0.95 }}
-            transition={{
-                duration: 0.4,
-                delay: index * 0.1,
-                ease: [0.25, 0.46, 0.45, 0.94],
-                layout: { duration: 0.3 }
-            }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, ease: 'easeOut' }}
             whileHover={{ y: -5 }}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
             className={`relative p-6 rounded-2xl border transition-all duration-300 h-full flex flex-col ${isDark ? 'bg-zinc-800/40 border-white/10 hover:border-cyan-500/40 hover:bg-zinc-800/60' : 'bg-white border-gray-200 hover:border-cyan-500/40 shadow-sm hover:shadow-xl'}`}
         >
             <div className="flex justify-between items-start mb-4">
@@ -84,8 +75,9 @@ const Projects = () => {
     const { isDark } = useTheme();
     const { t } = useLanguage();
     const [showAll, setShowAll] = useState(false);
+    const extraRef = useRef(null);
+    const [extraHeight, setExtraHeight] = useState(0);
 
-    // Add githubUrl to translation items
     const projectsWithLinks = t.projects.items.map((item, index) => {
         const urls = [
             'https://github.com/PedroHSSoares-Dev/ClickBus',
@@ -96,8 +88,15 @@ const Projects = () => {
         return { ...item, githubUrl: urls[index] };
     });
 
-    const visibleProjects = showAll ? projectsWithLinks : projectsWithLinks.slice(0, 3);
-    const hasMoreProjects = projectsWithLinks.length > 3;
+    const mainProjects = projectsWithLinks.slice(0, 3);
+    const extraProjects = projectsWithLinks.slice(3);
+    const hasMoreProjects = extraProjects.length > 0;
+
+    useEffect(() => {
+        if (extraRef.current) {
+            setExtraHeight(extraRef.current.scrollHeight);
+        }
+    }, [extraProjects]);
 
     return (
         <section id="projetos" className={`py-20 ${isDark ? 'bg-zinc-900/50' : 'bg-gray-50'} transition-colors duration-300`}>
@@ -109,32 +108,48 @@ const Projects = () => {
                     </h2>
                 </AnimatedTitle>
 
-                <motion.div layout className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <AnimatePresence mode="popLayout">
-                        {visibleProjects.map((projeto, idx) => (
-                            <ProjectCard
-                                key={projeto.title}
-                                {...projeto}
-                                index={idx}
-                                viewCodeLabel={t.projects.viewCode}
-                                impactLabel={t.projects.impactLabel}
-                            />
-                        ))}
-                    </AnimatePresence>
-                </motion.div>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {mainProjects.map((projeto, idx) => (
+                        <ProjectCard
+                            key={projeto.title}
+                            {...projeto}
+                            viewCodeLabel={t.projects.viewCode}
+                            impactLabel={t.projects.impactLabel}
+                        />
+                    ))}
+                </div>
 
                 {hasMoreProjects && (
-                    <motion.div
-                        layout
-                        className="flex justify-center mt-10"
-                    >
-                        <button
-                            onClick={() => setShowAll(!showAll)}
-                            className="px-8 py-4 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold text-lg hover:shadow-lg hover:shadow-cyan-500/25 transition-all transform hover:-translate-y-1"
+                    <>
+                        <div
+                            style={{
+                                maxHeight: showAll ? extraHeight + 24 : 0,
+                                opacity: showAll ? 1 : 0,
+                                transition: 'max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease',
+                                overflow: 'hidden',
+                            }}
                         >
-                            {showAll ? t.projects.showLess : t.projects.showMore}
-                        </button>
-                    </motion.div>
+                            <div ref={extraRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 pt-6">
+                                {extraProjects.map((projeto, idx) => (
+                                    <ProjectCard
+                                        key={projeto.title}
+                                        {...projeto}
+                                        viewCodeLabel={t.projects.viewCode}
+                                        impactLabel={t.projects.impactLabel}
+                                    />
+                                ))}
+                            </div>
+                        </div>
+
+                        <div className="flex justify-center mt-10">
+                            <button
+                                onClick={() => setShowAll(!showAll)}
+                                className="px-8 py-4 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold text-lg hover:shadow-lg hover:shadow-cyan-500/25 transition-all transform hover:-translate-y-1"
+                            >
+                                {showAll ? t.projects.showLess : t.projects.showMore}
+                            </button>
+                        </div>
+                    </>
                 )}
             </div>
         </section>
