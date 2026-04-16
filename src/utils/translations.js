@@ -123,7 +123,7 @@ export const translations = {
                     status: 'inProgress',
                     progress: 65,
                     credentialUrl: null,
-                    logoUrl: 'https://miro.medium.com/v2/resize:fit:4800/format:webp/1*GIaIUjVuPD-T_MlFwEWxWA.png',
+                    logoUrl: 'https://img-c.udemycdn.com/open-badges/v2/badge-class/1836431138/image771495085737125892.png',
                     description: 'Fundamentos de cloud, serviços core da AWS, segurança, arquitetura e billing.'
                 }
             ]
@@ -262,7 +262,7 @@ export const translations = {
                     status: 'inProgress',
                     progress: 65,
                     credentialUrl: null,
-                    logoUrl: 'https://miro.medium.com/v2/resize:fit:4800/format:webp/1*GIaIUjVuPD-T_MlFwEWxWA.png',
+                    logoUrl: 'https://img-c.udemycdn.com/open-badges/v2/badge-class/1836431138/image771495085737125892.png',
                     description: 'Cloud fundamentals, AWS core services, security, architecture and billing.'
                 }
             ]

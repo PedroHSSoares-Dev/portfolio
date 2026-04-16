@@ -17,7 +17,6 @@ const GenericCertIcon = () => (
     </svg>
 );
 
-
 const ExternalLinkIcon = () => (
     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -32,8 +31,8 @@ const CertificationCard = ({ cert, idx, t }) => {
 
     const cardClass = `relative p-6 rounded-2xl border transition-all duration-300 group flex flex-col ${
         isDark
-            ? 'bg-zinc-800/30 border-white/10 hover:bg-zinc-800/50 hover:border-emerald-500/30'
-            : 'bg-white border-gray-200 hover:border-emerald-500/30 shadow-sm hover:shadow-md hover:shadow-emerald-500/10'
+            ? 'bg-zinc-800/30 border-white/10 hover:bg-zinc-800/50 hover:border-cyan-500/30'
+            : 'bg-white border-gray-200 hover:border-cyan-500/30 shadow-sm hover:shadow-md hover:shadow-cyan-500/10'
     } ${isCompleted ? 'cursor-pointer' : ''}`;
 
     const cardContent = (
@@ -42,7 +41,7 @@ const CertificationCard = ({ cert, idx, t }) => {
             <div className="absolute top-4 right-4">
                 <span className={`text-xs px-2.5 py-1 rounded-full font-semibold ${
                     isCompleted
-                        ? (isDark ? 'bg-emerald-500/20 text-emerald-400' : 'bg-emerald-100 text-emerald-700')
+                        ? (isDark ? 'bg-cyan-500/20 text-cyan-400' : 'bg-cyan-100 text-cyan-700')
                         : (isDark ? 'bg-amber-500/20 text-amber-400' : 'bg-amber-100 text-amber-700')
                 }`}>
                     {statusLabel}
@@ -51,9 +50,9 @@ const CertificationCard = ({ cert, idx, t }) => {
 
             {/* Logo */}
             <div className="flex justify-center mb-5 mt-2">
-                <div className="w-24 h-24">
+                <div className="w-32 h-32 shrink-0">
                     {cert.logoUrl
-                        ? <img src={cert.logoUrl} alt={cert.name} className="w-full h-full object-contain" />
+                        ? <img src={cert.logoUrl} alt={cert.name} className="w-32 h-32 min-w-[128px] min-h-[128px] object-contain" />
                         : <GenericCertIcon />
                     }
                 </div>
@@ -61,7 +60,7 @@ const CertificationCard = ({ cert, idx, t }) => {
 
             {/* Name */}
             <h3 className={`text-base font-bold text-center mb-1 leading-snug pr-2 ${
-                isDark ? 'text-gray-200 group-hover:text-emerald-400' : 'text-gray-900 group-hover:text-emerald-600'
+                isDark ? 'text-gray-200 group-hover:text-cyan-400' : 'text-gray-900 group-hover:text-cyan-600'
             } transition-colors`}>
                 {cert.name}
             </h3>
@@ -82,7 +81,7 @@ const CertificationCard = ({ cert, idx, t }) => {
                     </span>
                     <span className={`text-xs font-semibold ${
                         isCompleted
-                            ? (isDark ? 'text-emerald-400' : 'text-emerald-600')
+                            ? (isDark ? 'text-cyan-400' : 'text-cyan-600')
                             : (isDark ? 'text-amber-400' : 'text-amber-600')
                     }`}>
                         {progress}%
@@ -92,8 +91,8 @@ const CertificationCard = ({ cert, idx, t }) => {
                     <motion.div
                         className={`absolute left-0 top-0 h-full rounded-full ${
                             isCompleted
-                                ? 'bg-emerald-500'
-                                : 'bg-gradient-to-r from-emerald-500 to-cyan-400'
+                                ? 'bg-cyan-500'
+                                : 'bg-gradient-to-r from-cyan-500 to-blue-400'
                         }`}
                         initial={{ width: 0 }}
                         whileInView={{ width: `${progress}%` }}
@@ -105,7 +104,7 @@ const CertificationCard = ({ cert, idx, t }) => {
                 {/* View credential footer */}
                 {isCompleted && (
                     <div className={`mt-3 flex items-center justify-center gap-1.5 text-sm font-medium ${
-                        isDark ? 'text-emerald-400' : 'text-emerald-600'
+                        isDark ? 'text-cyan-400' : 'text-cyan-600'
                     } opacity-0 group-hover:opacity-100 transition-opacity duration-200`}>
                         <span>{t.certifications.viewCredential}</span>
                         <ExternalLinkIcon />
@@ -160,7 +159,7 @@ const Certifications = () => {
             <div className="max-w-4xl mx-auto px-4 sm:px-6">
                 <AnimatedTitle>
                     <h2 className={`text-3xl sm:text-4xl font-bold ${isDark ? 'text-gray-200' : 'text-gray-900'} mb-12 transition-colors duration-300 flex items-center gap-3`}>
-                        <span className="bg-emerald-500 h-8 w-1 rounded-full"></span>
+                        <span className="bg-cyan-500 h-8 w-1 rounded-full"></span>
                         {t.certifications.title}
                     </h2>
                 </AnimatedTitle>
@@ -177,10 +176,10 @@ const Certifications = () => {
                                 aria-pressed={isActive}
                                 className={`px-4 py-1.5 rounded-full text-sm font-medium border transition-all duration-200 ${
                                     isActive
-                                        ? 'bg-emerald-500 border-emerald-500 text-white shadow-sm shadow-emerald-500/20'
+                                        ? 'bg-cyan-500 border-cyan-500 text-white shadow-sm shadow-cyan-500/20'
                                         : isDark
-                                            ? 'bg-transparent border-white/20 text-gray-400 hover:border-emerald-500/50 hover:text-emerald-400'
-                                            : 'bg-transparent border-gray-300 text-gray-600 hover:border-emerald-500/50 hover:text-emerald-600'
+                                            ? 'bg-transparent border-white/20 text-gray-400 hover:border-cyan-500/50 hover:text-cyan-400'
+                                            : 'bg-transparent border-gray-300 text-gray-600 hover:border-cyan-500/50 hover:text-cyan-600'
                                 }`}
                             >
                                 {label}
