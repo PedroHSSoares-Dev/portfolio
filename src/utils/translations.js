@@ -6,6 +6,7 @@ export const translations = {
             formacao: 'formação',
             projetos: 'projetos',
             habilidades: 'habilidades',
+            certificacoes: 'certificações',
             contato: 'contato'
         },
         hero: {
@@ -104,6 +105,28 @@ export const translations = {
                 tools: 'Tools & Visualization'
             }
         },
+        certifications: {
+            title: 'Certificações',
+            filterAll: 'Todas',
+            status: {
+                inProgress: 'Em progresso',
+                completed: 'Concluída'
+            },
+            viewCredential: 'Ver credencial',
+            progressLabel: 'Progresso',
+            items: [
+                {
+                    id: 'aws-ccp',
+                    name: 'AWS Certified Cloud Practitioner',
+                    issuer: 'AWS',
+                    code: 'CLF-C02',
+                    status: 'inProgress',
+                    progress: 65,
+                    credentialUrl: null,
+                    description: 'Fundamentos de cloud, serviços core da AWS, segurança, arquitetura e billing.'
+                }
+            ]
+        },
         contact: {
             title: 'Vamos Conversar?',
             description: 'Estou sempre aberto a novas oportunidades e colaborações. Se você tem um projeto interessante ou quer apenas trocar uma ideia sobre dados, entre em contato!',
@@ -121,6 +144,7 @@ export const translations = {
             formacao: 'education',
             projetos: 'projects',
             habilidades: 'skills',
+            certificacoes: 'certifications',
             contato: 'contact'
         },
         hero: {
@@ -218,6 +242,28 @@ export const translations = {
                 de: 'Data Engineering & Backend',
                 tools: 'Tools & Visualization'
             }
+        },
+        certifications: {
+            title: 'Certifications',
+            filterAll: 'All',
+            status: {
+                inProgress: 'In progress',
+                completed: 'Completed'
+            },
+            viewCredential: 'View credential',
+            progressLabel: 'Progress',
+            items: [
+                {
+                    id: 'aws-ccp',
+                    name: 'AWS Certified Cloud Practitioner',
+                    issuer: 'AWS',
+                    code: 'CLF-C02',
+                    status: 'inProgress',
+                    progress: 65,
+                    credentialUrl: null,
+                    description: 'Cloud fundamentals, AWS core services, security, architecture and billing.'
+                }
+            ]
         },
         contact: {
             title: 'Let\'s Talk?',
