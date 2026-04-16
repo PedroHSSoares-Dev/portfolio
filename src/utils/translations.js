@@ -123,6 +123,7 @@ export const translations = {
                     status: 'inProgress',
                     progress: 65,
                     credentialUrl: null,
+                    logoUrl: 'https://miro.medium.com/v2/resize:fit:4800/format:webp/1*GIaIUjVuPD-T_MlFwEWxWA.png',
                     description: 'Fundamentos de cloud, serviços core da AWS, segurança, arquitetura e billing.'
                 }
             ]
@@ -261,6 +262,7 @@ export const translations = {
                     status: 'inProgress',
                     progress: 65,
                     credentialUrl: null,
+                    logoUrl: 'https://miro.medium.com/v2/resize:fit:4800/format:webp/1*GIaIUjVuPD-T_MlFwEWxWA.png',
                     description: 'Cloud fundamentals, AWS core services, security, architecture and billing.'
                 }
             ]

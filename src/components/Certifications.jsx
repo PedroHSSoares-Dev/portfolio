@@ -4,21 +4,6 @@ import { useTheme } from './ThemeContext';
 import { useLanguage } from './LanguageContext';
 import { AnimatedTitle } from '../utils/animations';
 
-const AwsCloudIcon = () => (
-    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-        <defs>
-            <linearGradient id="awsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#FF9900" />
-                <stop offset="100%" stopColor="#FF6600" />
-            </linearGradient>
-        </defs>
-        <circle cx="50" cy="50" r="48" fill="url(#awsGrad)" />
-        <text x="50" y="38" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold" fontFamily="sans-serif">AWS</text>
-        <text x="50" y="58" textAnchor="middle" fill="white" fontSize="9" fontFamily="sans-serif">Certified</text>
-        <text x="50" y="72" textAnchor="middle" fill="white" fontSize="8" fontFamily="sans-serif">Cloud Practitioner</text>
-    </svg>
-);
-
 const GenericCertIcon = () => (
     <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
         <defs>
@@ -32,9 +17,6 @@ const GenericCertIcon = () => (
     </svg>
 );
 
-const CERT_ICONS = {
-    'aws-ccp': <AwsCloudIcon />,
-};
 
 const ExternalLinkIcon = () => (
     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -70,7 +52,10 @@ const CertificationCard = ({ cert, idx, t }) => {
             {/* Logo */}
             <div className="flex justify-center mb-5 mt-2">
                 <div className="w-24 h-24">
-                    {CERT_ICONS[cert.id] || <GenericCertIcon />}
+                    {cert.logoUrl
+                        ? <img src={cert.logoUrl} alt={cert.name} className="w-full h-full object-contain" />
+                        : <GenericCertIcon />
+                    }
                 </div>
             </div>
 
