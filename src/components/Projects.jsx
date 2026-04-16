@@ -83,6 +83,7 @@ const Projects = () => {
             'https://github.com/PedroHSSoares-Dev/ClickBus',
             'https://github.com/PedroHSSoares-Dev/fraud-detection-realtime',
             'https://github.com/PedroHSSoares-Dev/aws-ccp-simulator',
+            'https://github.com/PedroHSSoares-Dev/etl-banking-marketing-genai',
             'https://github.com/PedroHSSoares-Dev/crud'
         ];
         return { ...item, githubUrl: urls[index] };

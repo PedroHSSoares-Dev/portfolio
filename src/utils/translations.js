@@ -81,6 +81,14 @@ export const translations = {
                     tags: ['React', 'TypeScript', 'Tailwind', 'Zustand', 'Docker', 'AWS']
                 },
                 {
+                    title: 'ETL Pipeline com GenAI (DIO × TOTVS)',
+                    badge: '🤖 GEMINI + ETL',
+                    badgeTooltip: 'Bootcamp DIO × TOTVS',
+                    description: 'Pipeline ETL completo integrando uma API FastAPI containerizada (Docker) ao Google Gemini para geração de mensagens de marketing personalizadas em português, baseadas em perfis bancários sintéticos.',
+                    impact: 'Structured output com Pydantic, cache local para economia de quota e segmentação automática de usuários em 6 perfis de marketing.',
+                    tags: ['Python', 'FastAPI', 'Docker', 'Google Gemini', 'Pydantic', 'ETL']
+                },
+                {
                     title: 'Sistema Bancário Containerizado',
                     description: 'Backend robusto para operações bancárias com arquitetura de microsserviços simulada via Docker Compose.',
                     impact: 'Ambiente de desenvolvimento replicável e escalável.',
@@ -186,6 +194,14 @@ export const translations = {
                     description: 'Complete simulator for AWS Cloud Practitioner certification with analytical dashboard, domain heatmap and predictive weakness analysis.',
                     impact: '4 study modes, question anti-addiction system and automated deploy with Docker + CI/CD.',
                     tags: ['React', 'TypeScript', 'Tailwind', 'Zustand', 'Docker', 'AWS']
+                },
+                {
+                    title: 'ETL Pipeline with GenAI (DIO × TOTVS)',
+                    badge: '🤖 GEMINI + ETL',
+                    badgeTooltip: 'DIO × TOTVS Bootcamp',
+                    description: 'Complete ETL pipeline integrating a Dockerized FastAPI with Google Gemini to generate personalized marketing messages in Portuguese based on synthetic banking profiles.',
+                    impact: 'Structured output with Pydantic, local cache for quota savings, and automatic segmentation into 6 marketing profiles.',
+                    tags: ['Python', 'FastAPI', 'Docker', 'Google Gemini', 'Pydantic', 'ETL']
                 },
                 {
                     title: 'Containerized Banking System',
