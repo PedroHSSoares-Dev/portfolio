@@ -81,11 +81,11 @@ export const translations = {
                     tags: ['React', 'TypeScript', 'Tailwind', 'Zustand', 'Docker', 'AWS']
                 },
                 {
-                    title: 'ETL Pipeline com GenAI (DIO × TOTVS)',
-                    badge: '🤖 GEMINI + ETL',
-                    badgeTooltip: 'Bootcamp DIO × TOTVS',
-                    description: 'Pipeline ETL completo integrando uma API FastAPI containerizada (Docker) ao Google Gemini para geração de mensagens de marketing personalizadas em português, baseadas em perfis bancários sintéticos.',
-                    impact: 'Structured output com Pydantic, cache local para economia de quota e segmentação automática de usuários em 6 perfis de marketing.',
+                    title: 'ETL Pipeline com GenAI',
+                    badge: '🎓 DIO × TOTVS',
+                    badgeTooltip: 'Bootcamp TOTVS – Fundamentos de Engenharia de Dados e ML',
+                    description: 'Exercício do bootcamp TOTVS × DIO de fundamentos de ETL com IA Generativa. Pipeline que extrai perfis bancários sintéticos de uma API FastAPI (Docker), transforma via Google Gemini em mensagens de marketing personalizadas e carrega de volta na API.',
+                    impact: 'Structured output com Pydantic, cache local para economia de quota do Gemini e segmentação automática em 6 perfis de marketing.',
                     tags: ['Python', 'FastAPI', 'Docker', 'Google Gemini', 'Pydantic', 'ETL']
                 },
                 {
@@ -196,11 +196,11 @@ export const translations = {
                     tags: ['React', 'TypeScript', 'Tailwind', 'Zustand', 'Docker', 'AWS']
                 },
                 {
-                    title: 'ETL Pipeline with GenAI (DIO × TOTVS)',
-                    badge: '🤖 GEMINI + ETL',
-                    badgeTooltip: 'DIO × TOTVS Bootcamp',
-                    description: 'Complete ETL pipeline integrating a Dockerized FastAPI with Google Gemini to generate personalized marketing messages in Portuguese based on synthetic banking profiles.',
-                    impact: 'Structured output with Pydantic, local cache for quota savings, and automatic segmentation into 6 marketing profiles.',
+                    title: 'ETL Pipeline with GenAI',
+                    badge: '🎓 DIO × TOTVS',
+                    badgeTooltip: 'TOTVS Bootcamp – Data Engineering & ML Fundamentals',
+                    description: 'Bootcamp project (TOTVS × DIO) on ETL fundamentals with Generative AI. Pipeline that extracts synthetic banking profiles from a Dockerized FastAPI, transforms them via Google Gemini into personalized marketing messages, and loads them back into the API.',
+                    impact: 'Structured output with Pydantic, local cache for Gemini quota savings, and automatic segmentation into 6 marketing profiles.',
                     tags: ['Python', 'FastAPI', 'Docker', 'Google Gemini', 'Pydantic', 'ETL']
                 },
                 {
